@@ -17,11 +17,11 @@ function FormCard( {movieId } : Props) {
   const [movie, setMovie] = useState<Movie>();
   
   useEffect(() => {
-      axios.get(`${BASE_URL}/movies/${movieId}`)
+    axios.get(`${BASE_URL}/movies/${movieId}`)
         .then(response => {
             setMovie(response.data);
-        })
-  }, [movieId]);
+        });
+}, [movieId]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
